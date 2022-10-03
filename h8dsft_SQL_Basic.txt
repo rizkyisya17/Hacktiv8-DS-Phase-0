@@ -1,0 +1,28 @@
+select 
+trips.trip_id,
+trips.start_date,
+trips.subscriber_type,
+trips.start_station_name,
+trips.start_station_id,
+stations.station_id,
+stations.name,
+stations.landmark,
+from `bigquery-public-data.san_francisco.bikeshare_trips` trips
+cross join `bigquery-public-data.san_francisco.bikeshare_stations` stations
+where stations.landmark = 'Redwood City' 
+and trips.start_date BETWEEN '2016-01-01 00:00:00' AND '2016-07-01 00:00:00'
+
+
+select 
+trips.trip_id,
+trips.start_date,
+trips.subscriber_type,
+trips.start_station_name,
+trips.start_station_id,
+stations.station_id,
+stations.name,
+stations.landmark,
+from `bigquery-public-data.san_francisco.bikeshare_trips` trips
+cross join `bigquery-public-data.san_francisco.bikeshare_stations` stations
+where stations.landmark = 'Redwood City' 
+and trips.start_date BETWEEN '2016-07-01 00:00:00' AND '2016-12-31 23:59:59'
